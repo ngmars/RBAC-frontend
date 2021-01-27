@@ -13,9 +13,9 @@ const myOrgs=(props) =>{
         <figure className="snip1527">
           <div className="image"><img src={newImg} /></div>
           <figcaption>
-          <h3>NAME: {props.name}</h3>
-            <h3>OWNER: {props.owner}</h3>
-            <h3>Organization ID :{props.orgId}</h3>
+          <h3>Name: {props.name}</h3><br/>
+            <h3>Owner: {props.owner}</h3><br/>
+            <h3>Organization ID :{props.orgId}</h3><br/>
           </figcaption>
           <a ></a>
         </figure>

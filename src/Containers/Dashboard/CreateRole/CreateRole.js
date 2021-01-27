@@ -18,7 +18,6 @@ const CreateRole = props =>{
     },[]);
 
     //USE STATE COMPONENTS
-
     const [selectedPermissionsArr,setSelectedPermissionsArr]=useState([])
     const [isPermLod,SetIsPermLod]= useState(true);
     const [createRoleForm,SetCreateRoleForm]= useState({
@@ -167,6 +166,24 @@ const CreateRole = props =>{
 
 
     //RENDERING UI ELEMENTS
+    let TokenExpRedirect = null;
+    if (!localStorage.getItem('token')){
+        TokenExpRedirect =<Redirect to ='/'/>
+    }
+    let roleMessage=null;
+    let roleErrorMessage=null;
+    if(!props.loading){
+
+    if(props.successMessage){
+        roleMessage=(
+        <p className="SignUp-success">{props.successMessage}</p>
+    )
+            }else{
+        roleMessage=(
+        <p className="SignUp-error">{props.errorMessage}</p>
+    )
+             }
+    }
     let form=  <Sidebar/>;
     let perm= <Sidebar/>;
     if(!props.loading){
@@ -247,6 +264,8 @@ const CreateRole = props =>{
                 {perm}
                 <button onClick={CreateRolesubmitHandler}>SUBMIT</button>
             </form>
+            {roleMessage}
+            {TokenExpRedirect}
     </div>)
 
     }
@@ -270,6 +289,9 @@ const mapStatetoProps = state =>{
     organizations: state.organizations.organizations,
     AllPermissions: state.AllPermissions.AllPermissions,
     loading:state.AllPermissions.loading,
+    errorMessage:state.CreateRole.errorMessage,
+    successMessage:state.CreateRole.successMessage,
+
     token:state.auth.token
     };
 };

@@ -18,6 +18,10 @@ const ViewOrgs = props =>{
     let navbar =  <Navbar name ={localStorage.getItem('name')}/>;
     let count = 0;
     let rolesElement=  <Sidebar/>;
+    let TokenExpRedirect = null;
+    if (!localStorage.getItem('token')){
+        TokenExpRedirect =<Redirect to ='/'/>
+    }
     
     if(!props.loading){
 
@@ -41,6 +45,7 @@ const ViewOrgs = props =>{
             <div class="fund-pics row">
                 {rolesElement}
             </div>
+            {TokenExpRedirect}
     </div>)
 
     }

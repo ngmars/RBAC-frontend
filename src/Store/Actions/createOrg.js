@@ -27,12 +27,12 @@ export const createOrg =(name,email,owner,users,permissions_loaded,token)=>{
         console.log('GOT DATA');
         console.log(token)
         let body=JSON.stringify({
-            "name": name,
-            "email":email,
-            "logo" : null,
-            "owner":owner,
-            "users": users,
-            "permissions_loaded":permissions_loaded
+            name: name,
+            email:email,
+            logo : null,
+            owner:owner,
+            users: users,
+            permissions_loaded:permissions_loaded
         })/*
         let config = {
             headers: {
@@ -48,7 +48,7 @@ export const createOrg =(name,email,owner,users,permissions_loaded,token)=>{
             url: 'http://127.0.0.1:8000/organization/router/OrganizationApi/',
             headers: { 
               'Content-Type': 'application/json', 
-              'Authorization': 'Token 8a8b34981c36fb2067428e90acfd6a816de7a7bd'
+              'Authorization': 'Token '+token
             },
             data : body
           };

@@ -3,6 +3,8 @@ button{
     margin: 1em;
     border: none;
     outline:none;
+    display: inline;
+    position: relative;
   }
   body{
     background: #fff;

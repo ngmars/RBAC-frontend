@@ -19,7 +19,10 @@ const ViewOrgs = props =>{
         localStorage.setItem('eventId',event)
         props.history.push('/oneRole');
     }
-
+    let TokenExpRedirect = null;
+    if (!localStorage.getItem('token')){
+        TokenExpRedirect =<Redirect to ='/'/>
+    }
     let sidebar = <Sidebar/>;
     let navbar =  <Navbar name ={localStorage.getItem('name')}/>;
     let count = 0;
@@ -46,6 +49,7 @@ const ViewOrgs = props =>{
             <div class="fund-pics row">
             <div>{orgzs}</div>
             </div>
+            {TokenExpRedirect}
     </div>)
 
     }

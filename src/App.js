@@ -9,11 +9,15 @@ import oneRole from './Containers/Dashboard/OneRole/OneRole';
 import viewRole from './Containers/Dashboard/ViewRole/ViewRole';
 import CreateOrgs from './Containers/Dashboard/CreateOrg/CreateOrg';
 import CreateRole from './Containers/Dashboard/CreateRole/CreateRole';
+import Logout from './Containers/Auth/Logout/Logout';
 class App extends Component {
   render () {
   return (
     <div className="App">
     <Router>
+    <Switch>
+        <Route path="/logout" exact component={Logout}/>
+    </Switch>
     <Switch>
         <Route path="/" exact component={Auth}/>
     </Switch>

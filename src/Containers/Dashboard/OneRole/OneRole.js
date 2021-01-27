@@ -39,6 +39,10 @@ const ViewRoleByOrgs = props =>{
            ))
         }
     }
+    let TokenExpRedirect = null;
+    if (!localStorage.getItem('token')){
+        TokenExpRedirect =<Redirect to ='/'/>
+    }
   
     return(
         <div>
@@ -47,6 +51,7 @@ const ViewRoleByOrgs = props =>{
             <div class="fund-pics row">
                 {rolesElement}
             </div>
+            {TokenExpRedirect}
     </div>)
 
 }

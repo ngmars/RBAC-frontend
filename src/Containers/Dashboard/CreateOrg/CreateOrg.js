@@ -111,7 +111,10 @@ const CreateOrgs = props =>{
 
         return isValid;
     }
-
+    let TokenExpRedirect = null;
+    if (!localStorage.getItem('token')){
+        TokenExpRedirect =<Redirect to ='/'/>
+    }
     //Input Change Handler
     const inputChangedHandler = (event, controlName) => {
         console.log('Change Handler',controlName)
@@ -133,10 +136,10 @@ const CreateOrgs = props =>{
         console.log('User')
         if(!selectedUsersArr.includes(parseInt(event.target.value))){
             console.log("This is the includes array",selectedUsersArr.includes(parseInt(event.target.value)));
-            setSelectedUsersArr([...selectedUsersArr,(parseInt(event.target.value)+1)])
+            setSelectedUsersArr([...selectedUsersArr,parseInt(event.target.value)])
             console.log('full User array',selectedUsersArr)
             newUserArr.push(...selectedUsersArr);
-            newUserArr.push((parseInt(event.target.value))+1);
+            newUserArr.push(parseInt(event.target.value));
             console.log('newUSerArr',newUserArr);
             const updatedControls = {
             ...createOrgForm,
@@ -229,6 +232,7 @@ const CreateOrgs = props =>{
                 {form}
                 <button onClick={CreateOrgsubmitHandler}>SUBMIT</button>
             </form>
+            {TokenExpRedirect}
     </div>)
 
     }

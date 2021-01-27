@@ -11,7 +11,6 @@ return (
         <button class="dropbtn">{name}</button>
         <div class="dropdown-content">
             <a href="/logout">Logout</a>
-            <a href="">Change Password</a>
         </div>
     </div>
 </nav>

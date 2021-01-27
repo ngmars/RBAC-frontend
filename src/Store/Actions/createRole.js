@@ -53,7 +53,7 @@ export const createRole =(name,organization,permissions,permission_loaded,token)
         axios(config)
         .then(res=>{
          console.log("NEWWW RESPONSE",res.data)
-         /*
+         
                 const fetchedRoles = [];
                 for ( let key in res.data) {
                     //console.log(res.data.fundraiser[key],key)
@@ -63,7 +63,7 @@ export const createRole =(name,organization,permissions,permission_loaded,token)
                     } );
                 }
             dispatch(createRoleSuccess(fetchedRoles));
-            console.log("FETCHED EVENTS",fetchedRoles); */
+            console.log("FETCHED EVENTS",fetchedRoles); 
         })
         .catch(err=>{
             dispatch(createRoleFail(err));

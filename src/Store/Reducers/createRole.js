@@ -2,6 +2,8 @@ import * as actionTypes from '../Actions/ActionTypes/actionTypesCreateRole';
 import { updateObject } from '../../shared/utility';
 const initialState={
     CreateRole:[],
+    successMessage: null,
+    errorMessage: null,
     loading:false,
 }
 
@@ -13,14 +15,16 @@ const createRoleStart = ( state, action ) => {
 const createRoleSuccess = ( state, action ) => {
     console.log('SUCCESSSSS',action.AllRoles);
     return updateObject( state, {
-        CreateRole:action.CreateRole,
+        successMessage:"Success! You have created a new role!",
         loading: false
     } );
    
 };
 
 const createRoleFail = ( state, action ) => {
-    return updateObject( state, { loading: false } );
+    return updateObject( state, {
+    errorMessage:"New role not created!",
+    loading: false } );
 };
 
 const reducer =(state = initialState, action )=>{
