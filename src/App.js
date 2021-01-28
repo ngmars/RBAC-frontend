@@ -12,6 +12,8 @@ import CreateRole from './Containers/Dashboard/CreateRole/CreateRole';
 import Logout from './Containers/Auth/Logout/Logout';
 import CreateWkfl from './Containers/Dashboard/CreateWorkflow/CreateWkfl';
 import StateCreation from './Containers/Dashboard/CreateState/CreateState';
+import AllWkfl from './Containers/Dashboard/AllWkfl/AllWkfl';
+import createTransc from './Containers/Dashboard/AllWkfl/SelTransc/SelTransc';
 class App extends Component {
   render () {
   return (
@@ -43,6 +45,12 @@ class App extends Component {
     </Switch>
     <Switch>
         <Route path="/crtstate" exact component={StateCreation}/>
+    </Switch>
+    <Switch>
+        <Route path="/selwkfl" exact component={AllWkfl }/>
+        <Switch>
+        <Route path="/selwkfl/seltransc" exact component={createTransc}/>
+        </Switch>
     </Switch>
     </Router>
     

@@ -24,4 +24,8 @@ export {createWorkflow} from './createWkfl';
 export {fetchAllWorkflows} from './getAllWorkflows'
 //exporting create states component
 export {createStates} from './createStates'
+//exporting workflow by organization  component
+export {fetchWkflByOrg} from './getWkflByOrg'
+//Eporting get state by workflow component
+export {fetchStateByWkfl} from './fetchStateByWorkflow'
 

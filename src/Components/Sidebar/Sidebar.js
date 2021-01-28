@@ -15,6 +15,8 @@ const Sidebar =()=>{
             <li><a href="/crtrole">CREATE ROLES</a></li><br/><br/>
             <li><a href="/crtwkfl">CREATE WORKFLOW</a></li><br/><br/>
             <li><a href="/crtstate">CREATE STATE</a></li><br/><br/>
+            <li><a href="/selwkfl">CREATE TRANSACTION</a></li><br/><br/>
+            
         </ul>
         </nav>
     </div> 
