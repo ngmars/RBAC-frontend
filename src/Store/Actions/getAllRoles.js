@@ -38,7 +38,7 @@ export const fetchAllRole =(token)=>{
                     //console.log(res.data.fundraiser[key],key)
                     fetchedRoles.push( {
                         ...res.data[key],
-                        id: key
+                        id: res.data[key].id
                     } );
                 }
             dispatch(fetchAllRoleSuccess(fetchedRoles));

@@ -1,5 +1,3 @@
-
-
 //exporting signin component
 export {auth,logout} from './auth';
 //exporting signup component
@@ -22,3 +20,8 @@ export {createRole} from './createRole';
 export {fetchOwnOrganizations} from './ownOrg';
 //exportin create workflows component
 export {createWorkflow} from './createWkfl';
+//exporting get all workflows component
+export {fetchAllWorkflows} from './getAllWorkflows'
+//exporting create states component
+export {createStates} from './createStates'
+

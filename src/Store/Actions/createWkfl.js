@@ -21,16 +21,21 @@ export const createWorkflowStart =()=>{
     };
 }
 
-export const createWorkflow =(name,description,organization,token)=>{
+export const createWorkflow =(name,organization,description,token)=>{
     return dispatch=>{
         dispatch(createWorkflowStart());
         console.log('GOT DATA');
         console.log(token)
+        let data = new FormData();
+            data.append("name", name);
+            data.append("description", description);
+            data.append("organization", organization);
+        /*
         let body=JSON.stringify({
             "name": name,
             "description":description,
             "organization" : organization
-        })/*
+        })
         let config = {
             headers: {
                 'Authorization': 'Token ' + token,
@@ -39,15 +44,14 @@ export const createWorkflow =(name,description,organization,token)=>{
            
           }*/
 
-        console.log('SEnt DATA:',body);
+        //console.log('SEnt DATA:',body);
         var config = {
             method: 'post',
             url: 'http://127.0.0.1:8000/approvals/createworkflow/',
             headers: { 
-              'Content-Type': 'application/json', 
               'Authorization': 'Token '+token
             },
-            data : body
+            data : data
           };
         axios(config)
         .then(res=>{

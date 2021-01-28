@@ -17,6 +17,8 @@ import AllPermissionsReducer from './Store/Reducers/getAllPermissions';
 import CreateRoleReducer from './Store/Reducers/createRole';
 import fetchOwnOrgReducer from './Store/Reducers/ownOrg';
 import createWorkflowReducer from './Store/Reducers/createWkfl';
+import getallWorkflowReducer from './Store/Reducers/fetchWkfl';
+import createStatesReducer from './Store/Reducers/createStates';
 import './index.css';
 import App from './App';
 
@@ -26,7 +28,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer = combineReducers({
     auth:authReducer,signup:SignUpReducer, organizations: allOrganizationsReducers,RoleByOrganization:fetchRoleByOrgReducer,
     AllRoles:fetchAllRolesReducer, CreateOrg: createOrgReducer, AllUsers: AllUsersReducer, AllPermissions:AllPermissionsReducer,
-    CreateRole:CreateRoleReducer, ownOrganizations:fetchOwnOrgReducer, createWorkflow:createWorkflowReducer
+    CreateRole:CreateRoleReducer, ownOrganizations:fetchOwnOrgReducer, createWorkflow:createWorkflowReducer, fetchAllWorkflows:getallWorkflowReducer,
+    CreateStates:createStatesReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(

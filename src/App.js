@@ -11,6 +11,7 @@ import CreateOrgs from './Containers/Dashboard/CreateOrg/CreateOrg';
 import CreateRole from './Containers/Dashboard/CreateRole/CreateRole';
 import Logout from './Containers/Auth/Logout/Logout';
 import CreateWkfl from './Containers/Dashboard/CreateWorkflow/CreateWkfl';
+import StateCreation from './Containers/Dashboard/CreateState/CreateState';
 class App extends Component {
   render () {
   return (
@@ -39,6 +40,9 @@ class App extends Component {
     </Switch>
     <Switch>
         <Route path="/crtwkfl" exact component={CreateWkfl}/>
+    </Switch>
+    <Switch>
+        <Route path="/crtstate" exact component={StateCreation}/>
     </Switch>
     </Router>
     
