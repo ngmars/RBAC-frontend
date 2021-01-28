@@ -31,7 +31,7 @@ export const fetchOrganizations =(token)=>{
                 'Authorization': 'Token ' + token
             }
           }
-        axios.get('http://127.0.0.1:8000/router/getorganization/',config)
+        axios.get('http://127.0.0.1:8000/getorganization/',config)
         .then(res=>{
          console.log("NEWWW RESPONSE",res.data)
                 const fetchedOrganizations = [];

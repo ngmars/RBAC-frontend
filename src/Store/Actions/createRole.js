@@ -27,10 +27,10 @@ export const createRole =(name,organization,permissions,permission_loaded,token)
         console.log('GOT DATA');
         console.log(token)
         let body=JSON.stringify({
-            name: name,
-            organization:organization,
-            permissions : permissions,
-            permission_loaded:permission_loaded
+            "name": name,
+            "organization":organization,
+            "permissions" : permissions,
+            "permission_loaded":permission_loaded
         })/*
         let config = {
             headers: {

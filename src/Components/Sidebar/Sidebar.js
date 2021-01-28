@@ -11,7 +11,7 @@ const Sidebar =()=>{
         <nav class="sidenav">
         <ul class="sidebar-list" >
             <li><a href="/vworg">VIEW ORGANIZATIONS</a></li><br/><br/>
-            <li><a href="/vwrole">VIEW ROLES</a></li><br/><br/>
+            
             <li><a href="/crtorg">CREATE ORGANIZATIONS</a></li><br/><br/>
             <li><a href="/crtrole">CREATE ROLES</a></li><br/><br/>
         </ul>

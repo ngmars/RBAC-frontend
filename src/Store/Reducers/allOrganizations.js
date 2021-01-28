@@ -2,7 +2,7 @@ import * as actionTypes from '../Actions/ActionTypes/actionTypesAllOrganization'
 import { updateObject } from '../../shared/utility';
 const initialState={
     organizations:[],
-    loading:false,
+    loading:null,
 }
 
 const fetchOrganizationsStart = ( state, action ) => {

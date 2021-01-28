@@ -43,18 +43,6 @@ const CreateOrgs = props =>{
         valid: false,
         touched: false
     },
-    Owner: {
-        label:'Owner',
-        elementType: 'dropdown',
-        elementConfig: {
-            className:'formcontrol',
-            
-        },
-        options:'',
-        value: 0,
-        valid: false,
-        touched: false
-    },
     Users: {
         label:'Users',
         elementType: 'select-multiple',
@@ -152,18 +140,7 @@ const CreateOrgs = props =>{
         };
         SetcreateOrgForm(updatedControls);
         }
-    }else if(controlName=="Owner"){ 
-        
-        const updatedControls = {
-        ...createOrgForm,
-        [controlName]: {
-            ...createOrgForm[controlName],
-            value: ((parseInt(event.target.value))+1),
-            valid: checkValidity(event.target.value, createOrgForm[controlName].validation),
-            touched: true
-        }
-    };
-    SetcreateOrgForm(updatedControls);}
+    }
     else{
         const updatedControls = {
             ...createOrgForm,
@@ -188,16 +165,27 @@ const CreateOrgs = props =>{
         console.log("While submitting",event);
         console.log("name:",createOrgForm);
         console.log("email:",createOrgForm.email.value);
-        console.log("owner:",createOrgForm.Owner.value);
         console.log("users:",createOrgForm.Users.value);
         console.log("perm:",createOrgForm.permisson_loaded.value);
         
             let token = localStorage.getItem('token')
             event.preventDefault();
-            props.onCreateOrg(createOrgForm.name.value,createOrgForm.email.value, createOrgForm.Owner.value,createOrgForm.Users.value,createOrgForm.permisson_loaded.value,token);
-        
+            props.onCreateOrg(createOrgForm.name.value,createOrgForm.email.value,createOrgForm.Users.value,createOrgForm.permisson_loaded.value,token);
     }
+    let roleMessage=null;
+    let roleErrorMessage=null;
+    if(!props.loading){
 
+    if(props.successMessage){
+        roleMessage=(
+        <p className="SignUp-success">{props.successMessage}</p>
+    )
+            }else{
+        roleMessage=(
+        <p className="SignUp-error">{props.errorMessage}</p>
+    )
+             }
+    }
     if(!props.loading){
         console.log("props.loading",props.loading)
     const formElementsArray = []; //array for input elements
@@ -233,6 +221,7 @@ const CreateOrgs = props =>{
                 <button onClick={CreateOrgsubmitHandler}>SUBMIT</button>
             </form>
             {TokenExpRedirect}
+            {roleMessage}
     </div>)
 
     }
@@ -243,7 +232,7 @@ const mapAllOrganizationsDispatchToProps =dispatch => {
   
     return{
         onFetchAllUsers:(token) =>dispatch(actions.fetchAllUsers(token)),
-        onCreateOrg:(name,email,owner,users,permissions_loaded,token)=>dispatch(actions.createOrg(name,email,owner,users,permissions_loaded,token))
+        onCreateOrg:(name,email,users,permissions_loaded,token)=>dispatch(actions.createOrg(name,email,users,permissions_loaded,token))
     };
 }
 
@@ -254,7 +243,10 @@ const mapStatetoProps = state =>{
     return {
     AllUsers: state.AllUsers.AllUsers,
     loading:state.AllUsers.loading,
-    token:state.auth.token
+    token:state.auth.token,
+    errorMessage:state.CreateOrg.errorMessage,
+    successMessage:state.CreateOrg.successMessage,
+
     };
 };
 

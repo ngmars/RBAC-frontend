@@ -21,51 +21,37 @@ export const createOrgStart =()=>{
     };
 }
 
-export const createOrg =(name,email,owner,users,permissions_loaded,token)=>{
+export const createOrg =(name,email,users,permission_loaded,token)=>{
     return dispatch=>{
         dispatch(createOrgStart());
         console.log('GOT DATA');
         console.log(token)
-        let body=JSON.stringify({
-            name: name,
-            email:email,
-            logo : null,
-            owner:owner,
-            users: users,
-            permissions_loaded:permissions_loaded
-        })/*
-        let config = {
-            headers: {
-                'Authorization': 'Token ' + token,
-                'content-type':'multipart/form-data;',
-            },
-           
-          }*/
+        
+        var data = JSON.stringify({
+            "name":name,
+            "email":email,
+            "logo":null,
+            "owner":parseInt(localStorage.getItem('id')),
+            "users":users,
+            "permission_loaded":permission_loaded});
+            console.log('SENTDATA',data)
 
-        console.log('SEnt DATA:',body);
-        var config = {
-            method: 'post',
-            url: 'http://127.0.0.1:8000/organization/router/OrganizationApi/',
-            headers: { 
-              'Content-Type': 'application/json', 
-              'Authorization': 'Token '+token
-            },
-            data : body
-          };
-        axios(config)
+var config = {
+  method: 'post',
+  url: 'http://127.0.0.1:8000/organization/router/OrganizationApi/',
+  headers: { 
+    'Content-Type': 'application/json', 
+    'Authorization': 'Token '+token
+  },
+  data : data
+};
+
+axios(config)
         .then(res=>{
          console.log("NEWWW RESPONSE",res.data)
-         /*
-                const fetchedRoles = [];
-                for ( let key in res.data) {
-                    //console.log(res.data.fundraiser[key],key)
-                    fetchedRoles.push( {
-                        ...res.data[key],
-                        id: key
-                    } );
-                }
-            dispatch(createOrgSuccess(fetchedRoles));
-            console.log("FETCHED EVENTS",fetchedRoles); */
+         
+            dispatch(createOrgSuccess(res.data));
+            console.log("FETCHED EVENTS",res.data); 
         })
         .catch(err=>{
             dispatch(createOrgFail(err));

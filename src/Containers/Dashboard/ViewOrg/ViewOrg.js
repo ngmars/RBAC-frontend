@@ -13,6 +13,9 @@ const ViewOrgs = props =>{
         let token = localStorage.getItem('token')
         props.onFetchOrganizations(token);
     },[]);
+    
+    
+       
     const redirectHandler= (event)=> {
         console.log('EVENTTTT',event)
         //this.props.onFetchOneEvents(event);
@@ -27,8 +30,14 @@ const ViewOrgs = props =>{
     let navbar =  <Navbar name ={localStorage.getItem('name')}/>;
     let count = 0;
     let orgzs=  <Sidebar/>;
-    if(!props.loading){
-
+    let zeroOrg= null;
+    if(props.loading==false){
+        if(!props.organizations.length){
+//zeroOrg= <Redirect to='/crtorg'  />
+            console.log("WHATT")
+            props.history.push('/crtorg' );
+        }
+        else{
         orgzs= props.organizations.map(event =>(
         <div class="reposition">
         <button name="componentButton" value={event} onClick={()=>redirectHandler(event.id)}>
@@ -36,24 +45,29 @@ const ViewOrgs = props =>{
             name={event.name}
             owner={event.owner}
             orgId = {event.id}
-              />
+                />
         </button>
         </div>
-           ))
+            ))
+        }
     }
-  
+    
     return(
         <div>
-            {navbar}
-            {sidebar}
+            <h1>SELECT YOUR ORGANIZATION</h1>
             <div class="fund-pics row">
             <div>{orgzs}</div>
             </div>
             {TokenExpRedirect}
+           
     </div>)
 
     }
+            
+
+        
     
+   
     
 
 const mapAllOrganizationsDispatchToProps =dispatch => {

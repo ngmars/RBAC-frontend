@@ -2,6 +2,8 @@ import * as actionTypes from '../Actions/ActionTypes/actionTypesCreateOrg';
 import { updateObject } from '../../shared/utility';
 const initialState={
     CreateOrg:[],
+    successMessage: null,
+    errorMessage: null,
     loading:false,
 }
 
@@ -11,16 +13,20 @@ const createOrgStart = ( state, action ) => {
 };
 
 const createOrgSuccess = ( state, action ) => {
-    console.log('SUCCESSSSS',action.AllRoles);
+    //console.log('SUCCESSSSS',action);
     return updateObject( state, {
-        CreateOrg:action.AllRoles,
+        successMessage:"Success! You have created a new Organization!",
+        errorMessage:null,
         loading: false
     } );
    
 };
 
 const createOrgFail = ( state, action ) => {
-    return updateObject( state, { loading: false } );
+    return updateObject( state, { loading: false,
+        successMessage:null,
+        errorMessage:"New role not created!"
+    } );
 };
 
 const reducer =(state = initialState, action )=>{
