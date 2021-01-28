@@ -18,3 +18,7 @@ export{fetchAllUsers} from './getAllUsers';
 export {fetchAllPermissions} from './allPermissions';
 //Exporting create role component
 export {createRole} from './createRole';
+//exporting own organizations component
+export {fetchOwnOrganizations} from './ownOrg';
+//exportin create workflows component
+export {createWorkflow} from './createWkfl';

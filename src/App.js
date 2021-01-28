@@ -10,6 +10,7 @@ import viewRole from './Containers/Dashboard/ViewRole/ViewRole';
 import CreateOrgs from './Containers/Dashboard/CreateOrg/CreateOrg';
 import CreateRole from './Containers/Dashboard/CreateRole/CreateRole';
 import Logout from './Containers/Auth/Logout/Logout';
+import CreateWkfl from './Containers/Dashboard/CreateWorkflow/CreateWkfl';
 class App extends Component {
   render () {
   return (
@@ -35,6 +36,9 @@ class App extends Component {
     </Switch>
     <Switch>
         <Route path="/crtrole" exact component={CreateRole}/>
+    </Switch>
+    <Switch>
+        <Route path="/crtwkfl" exact component={CreateWkfl}/>
     </Switch>
     </Router>
     
