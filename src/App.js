@@ -14,6 +14,7 @@ import CreateWkfl from './Containers/Dashboard/CreateWorkflow/CreateWkfl';
 import StateCreation from './Containers/Dashboard/CreateState/CreateState';
 import AllWkfl from './Containers/Dashboard/AllWkfl/AllWkfl';
 import createTransc from './Containers/Dashboard/AllWkfl/SelTransc/SelTransc';
+import CreateFarmer from './Containers/Dashboard/CreateFarmer/CreateFarmer';
 class App extends Component {
   render () {
   return (
@@ -51,6 +52,9 @@ class App extends Component {
         <Switch>
         <Route path="/selwkfl/seltransc" exact component={createTransc}/>
         </Switch>
+    </Switch>
+    <Switch>
+        <Route path="/crtfarmer" exact component={CreateFarmer}/>
     </Switch>
     </Router>
     

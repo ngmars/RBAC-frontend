@@ -12,7 +12,7 @@ const CreateOrgs = props =>{
     //Input Element States
     let newUserArr=[];
     const [selectedUsersArr,setSelectedUsersArr]=useState([])
-    const [isPermLod,SetIsPermLod]= useState(true);
+    const [isPermLod,SetIsPermLod]= useState(false);
     const [createOrgForm,SetcreateOrgForm]= useState({
     name: {
         elementType: 'input',
@@ -55,11 +55,7 @@ const CreateOrgs = props =>{
         valid: false,
         touched: false
     },
-    permisson_loaded:{
-        label: 'Permission Loaded',
-        elementType: 'check-box',
-        value: isPermLod
-    }
+   
    })
 
    //To load users
@@ -166,11 +162,11 @@ const CreateOrgs = props =>{
         console.log("name:",createOrgForm);
         console.log("email:",createOrgForm.email.value);
         console.log("users:",createOrgForm.Users.value);
-        console.log("perm:",createOrgForm.permisson_loaded.value);
-        
+        //console.log("perm:",createOrgForm.permisson_loaded.value);
+        let permisson_loaded= false
             let token = localStorage.getItem('token')
             event.preventDefault();
-            props.onCreateOrg(createOrgForm.name.value,createOrgForm.email.value,createOrgForm.Users.value,createOrgForm.permisson_loaded.value,token);
+            props.onCreateOrg(createOrgForm.name.value,createOrgForm.email.value,createOrgForm.Users.value,permisson_loaded.value,token);
     }
     let roleMessage=null;
     let roleErrorMessage=null;

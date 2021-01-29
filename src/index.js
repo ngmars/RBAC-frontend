@@ -22,6 +22,7 @@ import createStatesReducer from './Store/Reducers/createStates';
 import WfklByOrgReducer from './Store/Reducers/fetchWkflByOrg';
 import StatebyWkflReducer from './Store/Reducers/fetchStateByWkfl';
 import CreateTransactionReducer from './Store/Reducers/createTransaction';
+import CreateFarmerReducer from './Store/Reducers/createFarmer';
 import './index.css';
 import App from './App';
 
@@ -32,7 +33,8 @@ const rootReducer = combineReducers({
     auth:authReducer,signup:SignUpReducer, organizations: allOrganizationsReducers,RoleByOrganization:fetchRoleByOrgReducer,
     AllRoles:fetchAllRolesReducer, CreateOrg: createOrgReducer, AllUsers: AllUsersReducer, AllPermissions:AllPermissionsReducer,
     CreateRole:CreateRoleReducer, ownOrganizations:fetchOwnOrgReducer, createWorkflow:createWorkflowReducer, fetchAllWorkflows:getallWorkflowReducer,
-    CreateStates:createStatesReducer, WkflByOrg:WfklByOrgReducer,StatebyWkfls:StatebyWkflReducer, createTransaction:CreateTransactionReducer
+    CreateStates:createStatesReducer, WkflByOrg:WfklByOrgReducer,StatebyWkfls:StatebyWkflReducer, createTransaction:CreateTransactionReducer,
+    CreateFarmer: CreateFarmerReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(

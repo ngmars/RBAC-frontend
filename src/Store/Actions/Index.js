@@ -30,4 +30,6 @@ export {fetchWkflByOrg} from './getWkflByOrg';
 export {fetchStateByWkfl} from './fetchStateByWorkflow';
 //Exporting create transaction component
 export {createTransaction} from './createTransaction';
+//Exporting create Farmer component
+export {createFarmer} from './createFarmer';
 
