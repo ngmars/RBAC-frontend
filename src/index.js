@@ -28,6 +28,8 @@ import OneFarmerForApprovalReducer from './Store/Reducers/fetchOneFarmer';
 import FarmerApprovalReducer from './Store/Reducers/approveFarmer';
 import CreatePlotReducer from './Store/Reducers/createPlot';
 import PlotForApprovalsReducer from './Store/Reducers/fetchPlotForApproval';
+import OnePlotForApprovalReducer from './Store/Reducers/fetchOnePlot';
+import PlotApprovalReducer from './Store/Reducers/approvePlot';
 import './index.css';
 import App from './App';
 
@@ -40,7 +42,8 @@ const rootReducer = combineReducers({
     CreateRole:CreateRoleReducer, ownOrganizations:fetchOwnOrgReducer, createWorkflow:createWorkflowReducer, fetchAllWorkflows:getallWorkflowReducer,
     CreateStates:createStatesReducer, WkflByOrg:WfklByOrgReducer,StatebyWkfls:StatebyWkflReducer, createTransaction:CreateTransactionReducer,
     CreateFarmer: CreateFarmerReducer,FarmerForApprovals:FarmerForApprovalsReducer,OneFarmerForApproval:OneFarmerForApprovalReducer,
-    FarmerApproval:FarmerApprovalReducer, CreatePlot:CreatePlotReducer, PlotForApprovals:PlotForApprovalsReducer
+    FarmerApproval:FarmerApprovalReducer, CreatePlot:CreatePlotReducer, PlotForApprovals:PlotForApprovalsReducer,OnePlotForApproval:OnePlotForApprovalReducer,
+    PlotApproval:PlotApprovalReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(

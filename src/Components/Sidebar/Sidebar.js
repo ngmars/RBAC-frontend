@@ -20,7 +20,6 @@ const Sidebar =()=>{
             <li><a href="/appvgetfarmer">APPROVE FARMER</a></li><br/><br/>
             <li><a href="/crtplot">CREATE PLOT</a></li><br/><br/>
             <li><a href="/appvgetplot">APPROVE PLOT</a></li><br/><br/>
-            
         </ul>
         </nav>
     </div> 

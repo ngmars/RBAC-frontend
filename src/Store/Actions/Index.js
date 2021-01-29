@@ -42,3 +42,7 @@ export {farmerApproval} from './approveFarmer';
 export {createPlot} from './createPlot';
 //Exporting get Plots for approval component
 export {fetchPlotForApproval} from './fetchPlotsForApproval';
+//Exporting get one Plot for approval component
+export {fetchOnePlotForApproval} from './fetchOnePlotForApproval';
+//Exporting Plot approval component
+export {PlotApproval} from './approvePlot';

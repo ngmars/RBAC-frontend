@@ -19,6 +19,7 @@ import ViewFarmers from './Containers/Dashboard/ApproveFarmer/GetFarmers/GetFarm
 import AppvFarmer from './Containers/Dashboard/ApproveFarmer/ApproveFarmer';
 import CreatePlot from './Containers/Dashboard/CreatePlot/CreatePlot';
 import fetchPlot from './Containers/Dashboard/ApprovePlot/FetchPlot/FetchPlot';
+import AppvPlot from './Containers/Dashboard/ApprovePlot/ApprovePlot';
 class App extends Component {
   render () {
   return (
@@ -71,6 +72,9 @@ class App extends Component {
     </Switch>
     <Switch>
         <Route path="/appvgetplot" exact component={fetchPlot}/>
+        <Switch>
+        <Route path="/appvgetplot/appv" exact component={AppvPlot}/>
+    </Switch>
     </Switch>
     </Router>
      
