@@ -18,7 +18,7 @@ const Sidebar =()=>{
             <li><a href="/selwkfl">CREATE TRANSACTION</a></li><br/><br/>
             <li><a href="/crtfarmer">CREATE FARMER</a></li><br/><br/>
             <li><a href="/appvgetfarmer">APPROVE FARMER</a></li><br/><br/>
-            
+            <li><a href="/crtplot">CREATE PLOT</a></li><br/><br/>
         </ul>
         </nav>
     </div> 

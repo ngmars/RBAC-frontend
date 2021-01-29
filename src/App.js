@@ -17,6 +17,8 @@ import createTransc from './Containers/Dashboard/AllWkfl/SelTransc/SelTransc';
 import CreateFarmer from './Containers/Dashboard/CreateFarmer/CreateFarmer';
 import ViewFarmers from './Containers/Dashboard/ApproveFarmer/GetFarmers/GetFarmers';
 import AppvFarmer from './Containers/Dashboard/ApproveFarmer/ApproveFarmer';
+import CreatePlot from './Containers/Dashboard/CreatePlot/CreatePlot';
+
 class App extends Component {
   render () {
   return (
@@ -63,6 +65,9 @@ class App extends Component {
         <Switch>
         <Route path="/appvgetfarmer/appv" exact component={AppvFarmer}/>
         </Switch>
+    </Switch>
+    <Switch>
+        <Route path="/crtplot" exact component={CreatePlot}/>
     </Switch>
     </Router>
      
