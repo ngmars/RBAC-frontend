@@ -32,4 +32,9 @@ export {fetchStateByWkfl} from './fetchStateByWorkflow';
 export {createTransaction} from './createTransaction';
 //Exporting create Farmer component
 export {createFarmer} from './createFarmer';
-
+//Exporting get farmers for approval component
+export {fetchFarmerForApproval} from './fetchFarmersForApproval';
+//Exporting get one farmer for approval component
+export {fetchOneFarmerForApproval} from './fetchOneFarmerForApproval';
+//Exporting Farmer Approval component
+export {farmerApproval} from './approveFarmer';

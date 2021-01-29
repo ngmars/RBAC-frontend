@@ -16,6 +16,7 @@ const createRoleSuccess = ( state, action ) => {
     console.log('SUCCESSSSS',action.AllRoles);
     return updateObject( state, {
         successMessage:"Success! You have created a new role!",
+        errorMessage:null,
         loading: false
     } );
    
@@ -24,7 +25,8 @@ const createRoleSuccess = ( state, action ) => {
 const createRoleFail = ( state, action ) => {
     return updateObject( state, {
     errorMessage:"New role not created!",
-    loading: false } );
+    loading: false ,
+    successMessage:null,} );
 };
 
 const reducer =(state = initialState, action )=>{

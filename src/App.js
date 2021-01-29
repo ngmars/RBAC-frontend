@@ -15,6 +15,8 @@ import StateCreation from './Containers/Dashboard/CreateState/CreateState';
 import AllWkfl from './Containers/Dashboard/AllWkfl/AllWkfl';
 import createTransc from './Containers/Dashboard/AllWkfl/SelTransc/SelTransc';
 import CreateFarmer from './Containers/Dashboard/CreateFarmer/CreateFarmer';
+import ViewFarmers from './Containers/Dashboard/ApproveFarmer/GetFarmers/GetFarmers';
+import AppvFarmer from './Containers/Dashboard/ApproveFarmer/ApproveFarmer';
 class App extends Component {
   render () {
   return (
@@ -56,8 +58,14 @@ class App extends Component {
     <Switch>
         <Route path="/crtfarmer" exact component={CreateFarmer}/>
     </Switch>
+    <Switch>
+        <Route path="/appvgetfarmer" exact component={ViewFarmers }/>
+        <Switch>
+        <Route path="/appvgetfarmer/appv" exact component={AppvFarmer}/>
+        </Switch>
+    </Switch>
     </Router>
-    
+     
 
     </div>
   );
