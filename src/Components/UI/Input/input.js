@@ -29,7 +29,6 @@ const input = ( props ) => {
             inputElement = (
                 <select
                     className={inputClasses.join(' ')}
-                    value={props.value}
                     onChange={props.changed}>
                     {props.options.map(option => (
                         <option key={option.id} value={option.id}>
@@ -43,7 +42,6 @@ const input = ( props ) => {
             inputElement = (
                 <select
                     className={inputClasses.join(' ')}
-                    value={props.value}
                     onChange={props.changed}>
                     {props.options.map(option => (
                         <option key={option.id} value={option.id}>
@@ -57,7 +55,6 @@ const input = ( props ) => {
         inputElement = (
             <select
                 className={inputClasses.join(' ')}
-                value={props.value}
                 onChange={props.changed} multiple>
                 {props.options.map(option => (
                     <option key={option.id} value={option.id}>

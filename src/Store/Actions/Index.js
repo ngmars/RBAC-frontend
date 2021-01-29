@@ -21,11 +21,13 @@ export {fetchOwnOrganizations} from './ownOrg';
 //exportin create workflows component
 export {createWorkflow} from './createWkfl';
 //exporting get all workflows component
-export {fetchAllWorkflows} from './getAllWorkflows'
+export {fetchAllWorkflows} from './getAllWorkflows';
 //exporting create states component
-export {createStates} from './createStates'
+export {createStates} from './createStates';
 //exporting workflow by organization  component
-export {fetchWkflByOrg} from './getWkflByOrg'
+export {fetchWkflByOrg} from './getWkflByOrg';
 //Eporting get state by workflow component
-export {fetchStateByWkfl} from './fetchStateByWorkflow'
+export {fetchStateByWkfl} from './fetchStateByWorkflow';
+//Exporting create transaction component
+export {createTransaction} from './createTransaction';
 

@@ -2,7 +2,7 @@ import * as actionTypes from '../Actions/ActionTypes/actionTypesCreateTransactio
 import { updateObject } from '../../shared/utility';
 const initialState={
     StateByWkfls:[],
-    loading:false,
+    loading:null,
 }
 
 const fetchStateByWkflStart = ( state, action ) => {

@@ -2,7 +2,7 @@ import * as actionTypes from '../Actions/ActionTypes/actionTypesGetAllPermission
 import { updateObject } from '../../shared/utility';
 const initialState={
     AllPermissions:[],
-    loading:false,
+    loading:null,
 }
 
 const fetchAllPermissionsStart = ( state, action ) => {

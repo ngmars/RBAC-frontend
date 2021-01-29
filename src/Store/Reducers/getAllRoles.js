@@ -2,7 +2,7 @@ import * as actionTypes from '../Actions/ActionTypes/actionTypesAllRoles';
 import { updateObject } from '../../shared/utility';
 const initialState={
     AllRoles:[],
-    loading:false,
+    loading:null,
 }
 
 const fetchAllRoleStart = ( state, action ) => {

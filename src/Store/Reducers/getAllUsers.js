@@ -2,7 +2,7 @@ import * as actionTypes from '../Actions/ActionTypes/actionTypesAllGetUsers';
 import { updateObject } from '../../shared/utility';
 const initialState={
     AllUsers:[],
-    loading:false,
+    loading:null,
 }
 
 const fetchAllUsersStart = ( state, action ) => {
