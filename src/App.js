@@ -18,7 +18,7 @@ import CreateFarmer from './Containers/Dashboard/CreateFarmer/CreateFarmer';
 import ViewFarmers from './Containers/Dashboard/ApproveFarmer/GetFarmers/GetFarmers';
 import AppvFarmer from './Containers/Dashboard/ApproveFarmer/ApproveFarmer';
 import CreatePlot from './Containers/Dashboard/CreatePlot/CreatePlot';
-
+import fetchPlot from './Containers/Dashboard/ApprovePlot/FetchPlot/FetchPlot';
 class App extends Component {
   render () {
   return (
@@ -68,6 +68,9 @@ class App extends Component {
     </Switch>
     <Switch>
         <Route path="/crtplot" exact component={CreatePlot}/>
+    </Switch>
+    <Switch>
+        <Route path="/appvgetplot" exact component={fetchPlot}/>
     </Switch>
     </Router>
      
