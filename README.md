@@ -8,6 +8,6 @@ It contains 3 parts,
 The app is made using React Js and can be run by doing a simple 
 <ul>
   <li>yarn install</li>
-  <li>yarn run start</li>[Create React App](https://github.com/facebook/create-react-app)
+  <li>yarn run start</li>
 </ul>
-Additionally you will be required to run the Backend Django Application which can be found [here](https://github.com/ngmars/RBAC).
+Additionally you will be required to run the Backend Django Application which can be found [here] (https://github.com/ngmars/RBAC).
